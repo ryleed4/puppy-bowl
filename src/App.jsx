@@ -11,16 +11,19 @@ function App() {
       <header>
         <h1 id="heading">Puppy Bowl</h1>
         <nav>
-          <Link to="/home">Home</Link>
-          <Link to="/form">Register a puppy!</Link>
+          <Link to="/" id="home-link">
+            Home
+          </Link>
+          <Link to="/form" id="register-link">
+            Register a puppy!
+          </Link>
         </nav>
       </header>
       <div id="main-section">
         <Routes>
           <Route path="/" element={<AllPuppiesDiv />} />
-          <Route path="/home" element={<AllPuppiesDiv />} />
           <Route path="/form" element={<AddPuppy />} />
-          <Route path=":/id" element={<SinglePuppy />} />
+          <Route path="/:id" element={<SinglePuppy />} />
         </Routes>
       </div>
       <footer></footer>

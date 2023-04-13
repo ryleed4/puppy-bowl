@@ -32,7 +32,7 @@ const AllPuppiesDiv = () => {
             <button
               className="delete-button"
               onClick={async () => {
-                await removePuppy(button.id);
+                await removePuppy(pup.id);
                 const players = await fetchAllPuppies();
                 setAllPuppies(players);
               }}

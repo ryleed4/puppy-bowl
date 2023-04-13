@@ -34,6 +34,10 @@ a:hover {
   color: blueviolet;
   }
 
+  #home-link {
+    margin-right: 50px;
+  }
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;

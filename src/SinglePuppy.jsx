@@ -7,15 +7,16 @@ export default function SinglePuppy() {
   useEffect(() => {
     async function getPuppy() {
       const puppyResponce = await fetchSinglePup(id);
-      setPuppy(puppyResponce);
+      console.log("Use Effect puppy res: ", puppyResponce);
+      setPuppy(puppyResponce.data.player);
     }
     getPuppy();
-    console.log(puppy);
   }, []);
+
   return (
     <div>
       {puppy && (
-        <div class="single-player-view">
+        <div class="single-player-view" key={puppy.id}>
           <div class="header-info">
             <p class="pup-title">${puppy.name}</p>
             <p class="pup-number">#${puppy.id}</p>

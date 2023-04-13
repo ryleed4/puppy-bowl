@@ -6,7 +6,7 @@ const AddPuppy = () => {
   const [breed, setBreed] = useState("");
 
   const handleSubmit = async (event) => {
-    event.preventDefault;
+    event.preventDefault();
     const newDog = await postPuppy(name, breed);
     console.log(newDog);
     setName("");
