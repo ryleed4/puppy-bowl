@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { fetchSinglePup } from "./api";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export default function SinglePuppy() {
   const { id } = useParams();
   const [puppy, setPuppy] = useState(null);
+  const navigate = useNavigate();
   useEffect(() => {
     async function getPuppy() {
       const puppyResponce = await fetchSinglePup(id);
@@ -28,7 +30,14 @@ export default function SinglePuppy() {
             src={puppy.imageUrl}
             alt="photo of the puppy"
           />
-          <button id="see-all">Back to all players</button>
+          <button
+            id="see-all"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            Back to all players
+          </button>
         </div>
       )}
     </div>
